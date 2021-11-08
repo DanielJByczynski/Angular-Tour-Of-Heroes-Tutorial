@@ -13,7 +13,6 @@ export class HeroesComponent implements OnInit {
 
   // === Public Properties ===
   public heroes: Hero[] = [];
-  public selectedHero?: Hero;
 
   constructor(
     private heroService: HeroService,
@@ -22,15 +21,6 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
-  }
-
-  /**
-   * Event handler for Hero List Selection sets Selected Hero.
-   * @param hero - The selected Hero from the list.
-   */
-  onSelect(hero: Hero) {
-    this.messageService.add(`HeroesComponent: Selected Hero id=${hero.id}`)
-    this.selectedHero = hero;
   }
 
   /**
